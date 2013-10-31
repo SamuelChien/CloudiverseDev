@@ -1,4 +1,4 @@
-CodeIgniterSetup
+CLoudiverseDev
 ================
 
-CodeIgniterSetup is a perfect set up for anyone who wishes to have authentication build for them already and start develop the website application in MVC fashion.
+Start a new cloudiverse prototype that allows general public using it. 
