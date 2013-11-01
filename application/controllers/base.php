@@ -17,7 +17,8 @@ class Base extends CI_Controller {
 
         if (!$this->authentication->logged_in())
         {
-            redirect(base_url('login'));
+            //redirect(base_url('login'));
+            redirect(base_url('index.php/login'));
             die();
         }
         else

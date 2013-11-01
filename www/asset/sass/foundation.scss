@@ -1,0 +1,10 @@
+// Foundation Components
+@import
+  "foundation/variables",
+  "foundation/components/global",
+  "foundation/components/grid",
+  "foundation/components/section",
+  "foundation/components/visibility";
+  
+// Normalize.scss for cross-browser support
+@import "foundation/normalize";

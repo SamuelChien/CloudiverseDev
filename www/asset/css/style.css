@@ -1,0 +1,78 @@
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+/*Import Custom Google Fonts*/
+/*Import FontAwesome*/
+@font-face {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: normal;
+  src: url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.eot?v=3.2.1") format("embedded-opentype"), url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.woff?v=3.2.1") format("woff"), url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.tff?v=3.2.1") format("truetype"); }
+
+a {
+  text-decoration: none; }
+
+.font-awesome {
+  font-family: FontAwesome; }
+
+/*The font we will use for titles*/
+.font-title {
+  font-family: 'Oxygen', sans-serif; }
+
+.seperator {
+  width: 100%;
+  margin: 15px 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3); }
+
+#main-body {
+  min-height: 100%;
+  position: relative; }
+
+footer {
+  /*position: absolute;*/
+  /*bottom: 0px;*/
+  color: #888480; }
+  footer #legal, footer #version {
+    font-size: 12px;
+    padding: 0 20px; }
+
+#login-page {
+  /*background:#E4EBF3;*/ }
+  #login-page #login-window {
+    background: #2A2A2C;
+    color: #FFF;
+    width: 550px;
+    margin: 50px auto; }
+    #login-page #login-window .active .title {
+      background: #487CD9; }
+    #login-page #login-window .title {
+      background: #2A2A2C;
+      height: 50px;
+      display: inline-block;
+      border: none;
+      padding: 0 10px; }
+      #login-page #login-window .title a {
+        color: #FFF;
+        padding: 17px; }
+    #login-page #login-window .dropdown {
+      padding-top: 50px; }
+    #login-page #login-window .content {
+      background: #3b3b3d;
+      color: white;
+      border: none;
+      padding-top: 1px;
+      /*.seperator{*/
+      /*  background: rgba(255,255,255,0.3);*/
+      /*}*/ }
+      #login-page #login-window .content .form-text {
+        line-height: 50px;
+        font-size: 16px; }
+      #login-page #login-window .content .form-text, #login-page #login-window .content input {
+        color: inherit;
+        height: 50px; }
+      #login-page #login-window .content input {
+        font-size: 12px;
+        background: rgba(255, 255, 255, 0.3);
+        border: none;
+        padding-left: 10px; }
+      #login-page #login-window .content .form-submit {
+        background: #487CD9; }
