@@ -7,13 +7,39 @@
   font-weight: normal;
   src: url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.eot?v=3.2.1") format("embedded-opentype"), url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.woff?v=3.2.1") format("woff"), url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.tff?v=3.2.1") format("truetype"); }
 
-a {
+/*the sticky footer settings*/
+html, body {
+  height: 100%; }
+
+#main-body {
+  overflow: auto;
+  padding-bottom: 60px; }
+
+footer {
+  position: relative;
+  margin-top: -60px;
+  height: 60px;
+  clear: both; }
+
+body:before {
+  content: "";
+  height: 100%;
+  float: left;
+  width: 0;
+  margin-top: -32767px; }
+
+/*End: the sticky footer settings*/
+a, a:visited, a:active {
+  color: inherit;
   text-decoration: none; }
+
+#main-body {
+  min-height: 100%;
+  position: relative; }
 
 .font-awesome {
   font-family: FontAwesome; }
 
-/*The font we will use for titles*/
 .font-title {
   font-family: 'Oxygen', sans-serif; }
 
@@ -23,35 +49,15 @@ a {
   height: 1px;
   background: rgba(255, 255, 255, 0.3); }
 
-#main-body {
-  min-height: 100%;
-  position: relative; }
+.text-center {
+  text-align: center; }
 
-html, body {
-  height: 100%; }
-
-#wrap {
-  min-height: 100%; }
-
-#main-body {
-  overflow: auto;
-  padding-bottom: 60px; }
-
-/* must be same height as the footer */
-footer {
-  position: relative;
-  margin-top: -60px;
-  /* negative value of footer height */
-  height: 60px;
-  clear: both; }
-
-/*Opera Fix*/
-body:before {
-  content: "";
-  height: 100%;
-  float: left;
-  width: 0;
-  margin-top: -32767px; }
+.text-unselectable {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none; }
 
 footer {
   /*position: absolute;*/
@@ -63,7 +69,8 @@ footer {
     padding: 0 20px; }
 
 #login-page {
-  background-image: url("../img/bg/1.png"); }
+  background-image: url("../img/bg/1.png");
+  /*Styling for the entire login window goes here*/ }
   #login-page #login-window {
     -webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.71);
     -moz-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.71);
@@ -71,19 +78,26 @@ footer {
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    background: #2A2A2C;
+    background: #444444;
     color: #FFF;
     width: 90%;
     max-width: 550px;
     margin: 50px auto;
     overflow: hidden; }
+    #login-page #login-window .seperator {
+      background: rgba(255, 255, 255, 0.1); }
     #login-page #login-window .section-container {
       border: none;
       margin-bottom: 0; }
+      #login-page #login-window .section-container .dropdown.active .mobile-tab-icon:before {
+        content: "\f068"; }
+      #login-page #login-window .section-container .dropdown.active .title {
+        background: #45aab8; }
       #login-page #login-window .section-container .dropdown {
         padding-top: 50px; }
         #login-page #login-window .section-container .dropdown .title {
-          background: #2A2A2C;
+          /*background: #2A2A2C;*/
+          background: #444444;
           height: 50px;
           display: inline-block;
           border: none;
@@ -95,32 +109,57 @@ footer {
             content: "\f067";
             padding-right: 15px; }
         #login-page #login-window .section-container .dropdown .content {
-          background: #3B3B3D;
+          background: #333333;
           color: white;
           border: none;
-          padding-top: 1px; }
-          #login-page #login-window .section-container .dropdown .content .form-submit {
-            background: #487CD9; }
-          #login-page #login-window .section-container .dropdown .content .form-submit:hover {
-            background: #82A6E7; }
-          #login-page #login-window .section-container .dropdown .content .form-text {
+          padding-top: 1px;
+          /*Styling for each form element goes here*/ }
+          #login-page #login-window .section-container .dropdown .content form .form-input {
+            width: calc(100% - 41.66667px); }
+          #login-page #login-window .section-container .dropdown .content form .form-input:hover, #login-page #login-window .section-container .dropdown .content form .form-input:focus {
+            background: #686868; }
+          #login-page #login-window .section-container .dropdown .content form .form-submit {
+            background: #45aab8;
+            transition: none; }
+          #login-page #login-window .section-container .dropdown .content form .form-submit:hover {
+            background: #8bcad3; }
+          #login-page #login-window .section-container .dropdown .content form .form-submit:active {
+            background: #4b6d72; }
+          #login-page #login-window .section-container .dropdown .content form .form-text {
             line-height: 50px;
             font-size: 16px; }
-          #login-page #login-window .section-container .dropdown .content .form-input:hover, #login-page #login-window .section-container .dropdown .content .form-input:active {
-            background: #686868; }
-          #login-page #login-window .section-container .dropdown .content input {
+          #login-page #login-window .section-container .dropdown .content form .form-checkbox {
+            padding-left: 15px;
+            padding-top: 10px; }
+            #login-page #login-window .section-container .dropdown .content form .form-checkbox input[type="checkbox"] {
+              display: none; }
+              #login-page #login-window .section-container .dropdown .content form .form-checkbox input[type="checkbox"] + label span {
+                display: inline-block;
+                width: 19px;
+                height: 19px;
+                margin: -1px 10px 0 0;
+                vertical-align: middle;
+                background: url(../img/check_radio_sheet.png) left top no-repeat;
+                cursor: pointer; }
+            #login-page #login-window .section-container .dropdown .content form .form-checkbox input[type="checkbox"]:checked + label span {
+              background: url(../img/check_radio_sheet.png) -19px top no-repeat; }
+          #login-page #login-window .section-container .dropdown .content form .input-icon {
+            width: 41.66667px;
+            display: inline-block;
+            font-size: 16px;
+            height: 50px;
+            background: #45aab8;
+            line-height: 49px;
+            text-align: center; }
+          #login-page #login-window .section-container .dropdown .content form input {
             font-size: 12px;
-            background: rgba(255, 255, 255, 0.3);
+            background: #282828;
             border: none;
             padding-left: 10px;
             -webkit-transition: all 0.1s ease-in-out;
             -moz-transition: all 0.1s ease-in-out;
             -o-transition: all 0.1s ease-in-out;
             transition: all 0.1s ease-in-out; }
-          #login-page #login-window .section-container .dropdown .content .form-text, #login-page #login-window .section-container .dropdown .content input {
+          #login-page #login-window .section-container .dropdown .content form .form-text, #login-page #login-window .section-container .dropdown .content form input {
             color: inherit;
             height: 50px; }
-      #login-page #login-window .section-container .dropdown.active .mobile-tab-icon:before {
-        content: "\f068"; }
-      #login-page #login-window .section-container .dropdown.active .title {
-        background: #487CD9; }
