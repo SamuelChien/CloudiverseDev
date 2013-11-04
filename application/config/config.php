@@ -18,7 +18,7 @@
  We need to fix this.. Get the site up so that we won't have to change this so often 
  I have to use this address to have it working on my desktop.. =P (Steven)
  ***/
-$config['base_url']	= 'http://localhost/Cloudiverse/www/';
+$config['base_url']	= 'http://localhost/CloudiverseDev/www/';
 //$config['base_url']	= 'https://orange.com/';
 
 /*
