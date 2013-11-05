@@ -1,6 +1,7 @@
 <?php
     $data['bodyID'] = "login-page";
-    $data['pageTitle'] = "Login/Register";
+    $data['showNavBar'] = False;
+    //$data['pageTitle'] = "Login/Register";
     $this->load->view('common/header', $data);
 ?>
         <section id="main-body">

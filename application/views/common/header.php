@@ -9,4 +9,16 @@
         <script type='text/javascript' src="<?php echo base_url('asset/js/jquery.min.js');?>"></script>
     </head>
     <body id="<?php echo $bodyID ?>">
-        <header></header>
+        <header>
+            <?php if($showNavBar) { ?><nav class="font-title">
+                <ul>
+                    <li class="font-awesome current-page"><a href="#">&#xf015;</a></li>
+                    <li><a href="#">Site link #1</a></li>
+                    <li><a href="#">Site link #2</a></li>
+                    <li><a href="#">Site link #3</a></li>
+                    <li><a href="#">Site link #4</a></li>
+                </ul>
+            </nav>
+            <?php } ?>
+
+        </header>

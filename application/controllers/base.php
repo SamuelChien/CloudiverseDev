@@ -14,8 +14,12 @@ class Base extends CI_Controller {
     
     public function index()
     {
-
-        if (!$this->authentication->logged_in())
+        /*
+        Until we get the Login's page's authentication working, I'm disabling the login page
+        so that work can be done on the homepage.. (Steven)
+        */
+        //if (!$this->authentication->logged_in())
+        if(false)
         {
             //redirect(base_url('login'));
             redirect(base_url('index.php/login'));
@@ -24,7 +28,8 @@ class Base extends CI_Controller {
         else
         {
             // load chooser view
-            $this->load->view('welcome_message');
+            //$this->load->view('welcome_message');
+            $this->load->view('home');
         }
     }
     public function login()
@@ -60,7 +65,7 @@ class Base extends CI_Controller {
         else
         {
             $data = array();
-            $data['title'] = 'Login';
+            $data['pageTitle'] = 'Login/SignUp';
             $this->load->view('auth/login', $data);
         }
     }
