@@ -1,6 +1,7 @@
 <?php
     $data['bodyID'] = "login-page";
-    $data['pageTitle'] = "Login/Register";
+    $data['showNavBar'] = False;
+    //$data['pageTitle'] = "Login/Register";
     $this->load->view('common/header', $data);
 ?>
         <section id="main-body">
@@ -90,7 +91,7 @@
                                     <!--Terms & conditions check box-->
                                     <div class="form-checkbox">
                                         <input type="checkbox" id="terms-conditions" name="terms-conditions" />
-                                        <label for="terms-conditions"><span></span>I accept your <a href="#"><u>terms and condidtions</u></a></label>
+                                        <label for="terms-conditions"><span></span>I accept the <a href="#"><u>terms and condidtions</u></a></label>
                                     </div>
                                 </div>
                                 <br/><br/>

@@ -33,6 +33,11 @@ a, a:visited, a:active {
   color: inherit;
   text-decoration: none; }
 
+li, ul {
+  margin: 0;
+  list-style: none;
+  padding: 0; }
+
 #main-body {
   min-height: 100%;
   position: relative; }
@@ -52,6 +57,18 @@ a, a:visited, a:active {
 .text-center {
   text-align: center; }
 
+.text-right {
+  text-align: right; }
+
+.text-left {
+  text-align: left; }
+
+.float-left {
+  float: left; }
+
+.float-right {
+  float: right; }
+
 .text-unselectable {
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -67,6 +84,52 @@ footer {
     opacity: 0.4;
     font-size: 12px;
     padding: 0 20px; }
+
+header nav {
+  width: 100%;
+  height: 40px;
+  background: rgba(24, 22, 25, 0.9); }
+  header nav #desktop-nav {
+    line-height: 35px;
+    padding: 0 25px;
+    padding-bottom: 1px;
+    /*@include clearfix();*/ }
+    header nav #desktop-nav > li {
+      color: rgba(228, 222, 208, 0.5);
+      margin-left: 15px;
+      display: inline-block;
+      border-bottom: 4px transparent solid;
+      -webkit-transition: all 0.1s ease-in-out;
+      -moz-transition: all 0.1s ease-in-out;
+      -o-transition: all 0.1s ease-in-out;
+      transition: all 0.1s ease-in-out;
+      cursor: pointer;
+      padding: 0 5px;
+      /*float: left;*/ }
+      header nav #desktop-nav > li .nav-icon {
+        font-size: 14px;
+        padding-right: 9px; }
+    header nav #desktop-nav > li.current-page, header nav #desktop-nav > li:hover {
+      color: #e4ded0;
+      border-bottom-color: #ABCCBD; }
+  header nav #mobile-nav {
+    background: rgba(0, 0, 0, 0.75);
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 30px;
+    z-index: 10; }
+    header nav #mobile-nav > li {
+      padding: 15px; }
+    header nav #mobile-nav #mobile-nav-close {
+      top: 15px;
+      right: 15px;
+      position: absolute;
+      cursor: pointer; }
 
 #login-page {
   background-image: url("../img/bg/1.png");
@@ -89,10 +152,6 @@ footer {
     #login-page #login-window .section-container {
       border: none;
       margin-bottom: 0; }
-      #login-page #login-window .section-container .dropdown.active .mobile-tab-icon:before {
-        content: "\f068"; }
-      #login-page #login-window .section-container .dropdown.active .title {
-        background: #45aab8; }
       #login-page #login-window .section-container .dropdown {
         padding-top: 50px; }
         #login-page #login-window .section-container .dropdown .title {
@@ -163,3 +222,10 @@ footer {
           #login-page #login-window .section-container .dropdown .content form .form-text, #login-page #login-window .section-container .dropdown .content form input {
             color: inherit;
             height: 50px; }
+      #login-page #login-window .section-container .dropdown.active .title {
+        background: #45aab8; }
+        #login-page #login-window .section-container .dropdown.active .title .mobile-tab-icon:before {
+          content: "\f068"; }
+
+#home-page {
+  background-image: url("../img/bg/6.png"); }

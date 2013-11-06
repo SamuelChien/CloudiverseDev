@@ -37,11 +37,6 @@ $checkbox-sprite-checked: -19px top;
     .section-container{
       border: none;
       margin-bottom: 0;
-      
-      .dropdown.active{
-        .mobile-tab-icon:before{content: "\f068"}
-        .title{background: $bg-active}
-      }
       .dropdown{
         padding-top: 50px;
         
@@ -112,6 +107,13 @@ $checkbox-sprite-checked: -19px top;
             }
             .form-text, input{color: inherit; height: $input-size}
           }
+        }
+      }
+      .dropdown.active{
+        .title{
+          background: $bg-active;
+          
+          .mobile-tab-icon:before{content: "\f068";}
         }
       }
     }
