@@ -14,7 +14,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= 'https://cloudiverse.com/';
+$config['base_url']	= 'http://cloudiverse.com/';
 
 /*
 |--------------------------------------------------------------------------

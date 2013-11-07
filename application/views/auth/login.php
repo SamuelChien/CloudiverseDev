@@ -29,7 +29,7 @@
                         <div data-section-title="" class="text-unselectable title"><a href="#panel1" class="text-unselectable"><span class="font-awesome mobile-tab-icon hide-for-medium-up"></span>Login</a></div>
                         <div data-section-content="" class="content">
                             <!--Login form-->
-                            <form action="<?php echo base_url();?>" method="post" enctype="multipart/form-data">
+                            <form method="post">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
                                     <!--Login Username-->
@@ -57,7 +57,7 @@
                                 <br/><br/>
                                 <div class="row">
                                     <!--Submit-->
-                                    <input type="submit" class="form-submit large-3 large-centered columns" value="login">
+                                    <input type="submit" class="form-submit large-3 large-centered columns" value="Login" name="login">
                                 </div>
                             </form>
                             <div class="seperator"></div>
@@ -69,7 +69,7 @@
                         <div data-section-title="" class="text-unselectable title" style="left: 89px;"><a href="#panel2" class="text-unselectable"><span class="font-awesome mobile-tab-icon hide-for-medium-up"></span>Sign Up</a></div>
                         <div data-section-content="" class="content">
                             <!--Registration form-->
-                            <form action="register" method="post" enctype="multipart/form-data">
+                            <form method="post" enctype="multipart/form-data">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
                                     <!--New Username-->
@@ -113,7 +113,7 @@
                                 <br/><br/>
                                 <div class="row">
                                     <!--Submit-->
-                                    <input type="submit" class="form-submit large-3 large-centered columns" value="Sign Up">
+                                    <input type="submit" class="form-submit large-3 large-centered columns" value="Sign Up" name="signup">
                                 </div>
                             </form>
                         </div>

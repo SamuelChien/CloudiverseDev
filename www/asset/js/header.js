@@ -27,3 +27,14 @@ function setupMobileNav(){
     mobileNav.fadeOut();
   });
 }
+
+        //$("#logout").click(function(){
+        //  console.log("E");
+        //    $.ajax({
+        //        url: '/',
+        //        type: 'POST',
+        //        data: { logout:'hi there!'}
+        //      });
+        //    location.reload();
+        //    console.log("E");
+        //});

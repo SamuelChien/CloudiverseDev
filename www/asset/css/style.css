@@ -217,6 +217,10 @@ header nav {
             background: #45aab8;
             line-height: 49px;
             text-align: center; }
+          #login-page #login-window .section-container .dropdown .content form .error .input-icon {
+            background: #d24530; }
+          #login-page #login-window .section-container .dropdown .content form .warning .input-icon {
+            background: #ddaa39; }
           #login-page #login-window .section-container .dropdown .content form input {
             font-size: 12px;
             background: #282828;

@@ -1,16 +1,19 @@
-$input-size: 50px;
-$input-icon-width: 40px;
+$input-size:        50px;
+$input-icon-width:  40px;
 
-$bg-main: #444;
-$bg-form-main: #333333;
-$bg-active: #45AAB8;
-$bg-active-hover: #8bcad3;
-$bg-active-click: #4b6d72;
-$bg-form-input: #282828;
+$bg-form-window:      #444;
+$bg-form-main:        #333;
+$bg-active:           #45AAB8;
+$bg-form-error:       #D24530;
+$bg-form-warning:     #DDAA39;
+$bg-active-hover:     #8bcad3;
+$bg-active-click:     #4b6d72;
+$bg-form-input:       #282828;
 $bg-form-input-hover: #686868;
-$checkbox-spritesheet-src: url(../img/check_radio_sheet.png);
+
+$checkbox-spritesheet-src:  url(../img/check_radio_sheet.png);
 $checkbox-sprite-unchecked: left top;
-$checkbox-sprite-checked: -19px top;
+$checkbox-sprite-checked:   -19px top;
 
 #login-page{
   background-image: url('../img/bg/1.png');
@@ -23,7 +26,7 @@ $checkbox-sprite-checked: -19px top;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
     border-radius: 5px;
-    background: $bg-main;
+    background: $bg-form-window;
     color: #FFF;
     width: 90%;
     max-width: 550px;
@@ -42,7 +45,7 @@ $checkbox-sprite-checked: -19px top;
         
         .title{      
           /*background: #2A2A2C;*/
-          background: $bg-main;
+          background: $bg-form-window;
           height:50px;
           display: inline-block;
           border: none;
@@ -94,6 +97,12 @@ $checkbox-sprite-checked: -19px top;
               background: $bg-active;
               line-height: $input-size - 1;
               text-align: center;
+            }
+            .error .input-icon{
+              background: $bg-form-error;
+            }
+            .warning .input-icon{
+              background: $bg-form-warning;
             }
             input{
               font-size: 12px;
