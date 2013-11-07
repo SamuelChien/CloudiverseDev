@@ -1,5 +1,25 @@
-<?php $this->load->view('i/header'); ?>
-    <body id="login-page">
+<?php
+    $data = array();
+    // A unique identifier for this page (used for CSS styling)
+    $data['body_ID'] = "login-page";
+    // Text that should be placed in the title tag in the head
+    $data['page_title'] = "Login or Sign up";
+    /*
+     *  Add addition CSS stylesheets here!
+     *  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SYTLESHEETS');
+     */
+    $data['header_CSS_inc'] = array();
+    /*
+     *  Add addition CSS stylesheets here!
+     *  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SCRIPTS');
+     */
+    $data['header_JS_inc'] = array();
+    // Set this to true if you wish to display the nav bar.
+    $data['header_nav_display'] = False;
+
+    // Load the header file!
+    $this->load->view('common/header', $data);
+?>
         <section id="main-body">
             <!--The login window div-->
             <section id="login-window">
@@ -9,14 +29,13 @@
                         <div data-section-title="" class="text-unselectable title"><a href="#panel1" class="text-unselectable"><span class="font-awesome mobile-tab-icon hide-for-medium-up"></span>Login</a></div>
                         <div data-section-content="" class="content">
                             <!--Login form-->
-                            <form action="/login/" method="post" enctype="multipart/form-data">
+                            <form action="<?php echo base_url();?>" method="post" enctype="multipart/form-data">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
                                     <!--Login Username-->
                                     <div class="large-3 columns form-text">Username</div>
                                     <div class="large-9 columns">
-                                        <div class="input-icon font-awesome">&#xf007;</div>
-                                        <input type="text" class="form-input" name="username">
+                                        <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username">
                                     </div>
                                 </div>
                                 <br/>
@@ -24,8 +43,7 @@
                                     <!--Login Password-->
                                     <div class="large-3 columns form-text">Password</div>
                                     <div class="large-9 columns">
-                                        <div class="input-icon font-awesome">&#xf084;</div>
-                                        <input type="password" class="form-input" name="password">
+                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password">
                                     </div>
                                 </div>
                                 <br/>
@@ -39,7 +57,7 @@
                                 <br/><br/>
                                 <div class="row">
                                     <!--Submit-->
-                                    <input type="submit" class="form-submit large-3 large-centered columns" value="login" name="login">
+                                    <input type="submit" class="form-submit large-3 large-centered columns" value="login">
                                 </div>
                             </form>
                             <div class="seperator"></div>
@@ -51,7 +69,7 @@
                         <div data-section-title="" class="text-unselectable title" style="left: 89px;"><a href="#panel2" class="text-unselectable"><span class="font-awesome mobile-tab-icon hide-for-medium-up"></span>Sign Up</a></div>
                         <div data-section-content="" class="content">
                             <!--Registration form-->
-                            <form action="/signup" method="post" enctype="multipart/form-data">
+                            <form action="register" method="post" enctype="multipart/form-data">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
                                     <!--New Username-->
@@ -107,5 +125,5 @@
             <script type="text/javascript" src="<?php echo base_url('asset/js/foundation/foundation.js'); ?>"></script>
             <script type="text/javascript" src="<?php echo base_url('asset/js/foundation/foundation.section.js'); ?>"></script>
             <script>$(document).foundation();</script>
-            </section>
-<?php $this->load->view('i/footer'); ?>
+        </section>
+<?php $this->load->view('common/footer'); ?>

@@ -1,0 +1,104 @@
+/*
+ *
+ * print.css
+ *
+ *
+ */
+
+* {
+    font-family: 'Helvetica Neue', 'Helvetica', sans-serif !important;
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+#header, #footer, #filters, .titleHeader, #codeigniter_profiler, #chartcontrols, #paginationLabel {
+    display: none;
+}
+
+#container {
+    position: relative;
+    min-height: 100%;
+}
+
+h1, h2, h3, p {
+    letter-spacing: 1px;
+    font-weight: 200;
+    color: #ffffff;
+}
+
+h1 {
+    font-size: 48px;
+}
+
+h2 {
+    font-size: 26px;
+    margin: 20px 0;
+}
+
+h3 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+p {
+    font-size: 14px;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: #2C68EB;
+}
+
+a:hover {
+    color: #6696FF;
+}
+
+a:active {
+    color: #214FB3;
+}
+
+.invisible {
+    display: none;
+}
+
+.graphClass {
+    width: 100%;
+}
+
+/*
+ * Table Style
+ *
+ */
+table {
+    background: #ffffff;
+    border-spacing: 0;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+td {
+    padding: 10px;
+    margin: 0;
+    border: 1px solid #d0d0d0;
+}
+
+/*
+ * Content Wrapper
+*/
+
+#content {
+    overflow: hidden;
+    padding: 0 20px 65px 20px;
+}
+
+/*
+ * Chart
+ */
+
+.chartcontainer {
+    position: relative;
+    min-height: 40px;
+    margin: 10px 0;
+}

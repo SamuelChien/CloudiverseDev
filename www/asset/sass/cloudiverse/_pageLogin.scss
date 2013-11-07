@@ -1,5 +1,5 @@
 $input-size: 50px;
-$input-icon-width: $input-size/1.2;
+$input-icon-width: 40px;
 
 $bg-main: #444;
 $bg-form-main: #333333;
@@ -59,7 +59,7 @@ $checkbox-sprite-checked: -19px top;
           
           /*Styling for each form element goes here*/
           form{
-            .form-input{width: calc(100% - #{$input-icon-width});}
+            .form-input{width: calc(100% - #{$input-icon-width + 5});}
             .form-input:hover,.form-input:focus{background: $bg-form-input-hover;}
             .form-submit{background: $bg-active; transition:none} 
             .form-submit:hover{background:$bg-active-hover}

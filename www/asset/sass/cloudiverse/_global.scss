@@ -1,4 +1,5 @@
 $footerHt: 60px;
+$maxPageWidth: 1500px;
 /*Import Custom Google Fonts*/
 @import url(http://fonts.googleapis.com/css?family=Oxygen);
 
@@ -46,7 +47,9 @@ li, ul{
   margin: 0; list-style: none; padding: 0;
 }
 #main-body{
+  margin-top: 50px;
   min-height: 100%;
+  width: 100%;
   position: relative;
 }
 
@@ -86,4 +89,9 @@ li, ul{
   -ms-user-select: none;
   -o-user-select: none;
   user-select: none;
+}
+.container{
+  margin: 0 auto;
+  width: 100%;
+  max-width: $maxPageWidth;
 }
