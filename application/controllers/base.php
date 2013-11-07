@@ -1,7 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 class Base extends CI_Controller {
     
-	//This function is called when maintenance is on
+//This function is called when maintenance is on
     public function __construct()
     {
         parent::__construct();
@@ -13,10 +13,10 @@ class Base extends CI_Controller {
         }
     }
     
-	// The default home page checks if not log in, then log in or load the home page
+// The default home page checks if not log in, then log in or load the home page
     public function index()
     {
-		// If not log in, go to log in page
+        // If not log in, go to log in page
         if (!$this->authentication->logged_in())
         {
             redirect(base_url('login'));
@@ -29,21 +29,21 @@ class Base extends CI_Controller {
         }
     }
 
-	/*
-	 * Log in page, check if it's already logged in, then go to home page
-	 *              If didn't log in, bring to log in page, or if it's a form
-	 *              then try to do the log in method
-	 */
+/*
+ * Log in page, check if it's already logged in, then go to home page
+ *              If didn't log in, bring to log in page, or if it's a form
+ *              then try to do the log in method
+ */
     public function login()
     {
-		// if already log in, then go to home page
+        // if already log in, then go to home page
         if ($this->authentication->logged_in())
         {
             redirect(base_url());
             die();
         }
         
-		// if it's a form then try log in
+        // if it's a form then try log in
         if ($this->input->post('login'))
         {
             $username = $this->input->post('username');
@@ -66,18 +66,18 @@ class Base extends CI_Controller {
             redirect(base_url('login'));
             die();
         }
-		// if it's not a form, then bring to log in view
+        // if it's not a form, then bring to log in view
         else
         {
             $this->load->view('auth/login');
         }
     }
 	
-	public function signup()
-	{
-        $this->load->view('auth/login');
-	}
-    
+    public function signup()
+    {
+           $this->load->view('auth/login');
+    }
+
 
     public function logout()
     {
