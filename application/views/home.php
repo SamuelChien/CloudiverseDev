@@ -1,4 +1,8 @@
 <?php
+    /*
+     *  HTML for the Home page
+     */
+
     $data = array();
     // A unique identifier for this page (used for CSS styling)
     $data['body_ID'] = "home-page";

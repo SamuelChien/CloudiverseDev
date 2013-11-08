@@ -69,13 +69,13 @@
                         <div data-section-title="" class="text-unselectable title" style="left: 89px;"><a href="#panel2" class="text-unselectable"><span class="font-awesome mobile-tab-icon hide-for-medium-up"></span>Sign Up</a></div>
                         <div data-section-content="" class="content">
                             <!--Registration form-->
-                            <form method="post" enctype="multipart/form-data">
+                            <form method="post">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
                                     <!--New Username-->
                                     <div class="large-4 columns form-text">New Username</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username" required>
+                                        <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username" >
                                     </div>
                                 </div>
                                 <br/>
@@ -83,7 +83,7 @@
                                     <!--New email-->
                                     <div class="large-4 columns form-text">Email</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf003;</div><input type="email" class="form-input" name="email" pattern="[a-zA-Z]*@[a-zA-Z]*" required>
+                                        <div class="input-icon font-awesome">&#xf003;</div><input type="email" class="form-input" name="email" pattern="[a-zA-Z]*@[a-zA-Z]*" >
                                     </div>
                                 </div>
                                 <br/>
@@ -91,7 +91,7 @@
                                     <!--New Passwrord-->
                                     <div class="large-4 columns form-text">New Password</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password" required> 
+                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password"> 
                                     </div>
                                 </div>
                                 <br/>
@@ -99,7 +99,7 @@
                                     <!--Reconfirm new password-->
                                     <div class="large-4 columns form-text">Re-enter Password</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password-confirm" required>
+                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password-confirm" >
                                     </div>
                                 </div>
                                 <br/>

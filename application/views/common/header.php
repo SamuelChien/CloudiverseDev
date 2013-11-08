@@ -34,7 +34,7 @@
                         <a href="#"><span class="font-awesome nav-icon">&#xf013;</span> Settings</a>
                     </li>
                     <li class="hide-for-small float-right" id="logout">
-                        <span class="font-awesome nav-icon">&#xf011;</span> Logout
+                        <a href="<?php echo base_url('logout');?>"><span class="font-awesome nav-icon">&#xf011;</span> Logout</a>
                     </li>
                     <li class="show-for-small float-right" id="mobile-nav-grabber">
                         <span class="font-awesome">&#xf039;</span>

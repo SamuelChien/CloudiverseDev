@@ -1,21 +1,20 @@
 <?php if (!defined('BASEPATH')) exit('No direct script access allowed');
-
 class Authentication extends CI_Model
 {
-    public function __construct()
-    {
-        parent::__construct();
-    }
-    
+
+    /*
+     * logged_in(), returns True iff the user is currently logged in
+     */        
     public function logged_in()
     {
         if ($this->session->userdata('logged_in'))
-        {
             return true;
-        }
         return false;
     }
-    
+
+    /*
+     * login function, returns True if the user could be logged in
+     */    
     public function login($username, $password)
     {
         if($username == "Apple" || $username == "Orange"){
@@ -34,6 +33,14 @@ class Authentication extends CI_Model
         }
         return false;
     }
-
+    
+    /*
+     * Signup function, returns True if the user could be created
+     */
+    public function signup($username, $email, $password, $password_conf){
+        // User Registration Goes here
+        return true;
+    }
 }
-// END
+/* End of file authentication.php */
+/* Location: ../application/models/authentication.php */

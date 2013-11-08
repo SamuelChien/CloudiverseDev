@@ -39,10 +39,8 @@
 */
 
 $route['default_controller'] = "base";
-
 $route['login'] = 'base/login';
 $route['logout'] = 'base/logout';
-
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
