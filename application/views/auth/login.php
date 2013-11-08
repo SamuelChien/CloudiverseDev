@@ -1,4 +1,8 @@
 <?php
+    /*
+     * HTML for the Login Page
+     */
+
     $data = array();
     // A unique identifier for this page (used for CSS styling)
     $data['body_ID'] = "login-page";
@@ -75,7 +79,7 @@
                                     <!--New Username-->
                                     <div class="large-4 columns form-text">New Username</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username" >
+                                        <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username" required>
                                     </div>
                                 </div>
                                 <br/>
@@ -83,7 +87,7 @@
                                     <!--New email-->
                                     <div class="large-4 columns form-text">Email</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf003;</div><input type="email" class="form-input" name="email" pattern="[a-zA-Z]*@[a-zA-Z]*" >
+                                        <div class="input-icon font-awesome">&#xf003;</div><input type="email" class="form-input" name="email" pattern="[a-zA-Z]*@[a-zA-Z]*" required>
                                     </div>
                                 </div>
                                 <br/>
@@ -91,7 +95,7 @@
                                     <!--New Passwrord-->
                                     <div class="large-4 columns form-text">New Password</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password"> 
+                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password" required> 
                                     </div>
                                 </div>
                                 <br/>
@@ -99,14 +103,14 @@
                                     <!--Reconfirm new password-->
                                     <div class="large-4 columns form-text">Re-enter Password</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password-confirm" >
+                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password-confirm" required>
                                     </div>
                                 </div>
                                 <br/>
                                 <div class="row">
                                     <!--Terms & conditions check box-->
                                     <div class="form-checkbox">
-                                        <input type="checkbox" id="terms-conditions" name="terms-conditions" />
+                                        <input type="checkbox" id="terms-conditions" name="terms-conditions" required/>
                                         <label for="terms-conditions"><span></span>I accept the <a href="#"><u>terms and condidtions</u></a></label>
                                     </div>
                                 </div>

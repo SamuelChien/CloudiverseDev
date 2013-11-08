@@ -5,24 +5,20 @@ class Base extends CI_Controller {
      * Constructor, Checks if the site is meant to be under maintenece
      *              and if so, then load the maintainence page
      */
-    public function __construct()
-    {
+    public function __construct() {
         parent::__construct();
-        if ($this->config->item('maintenance'))
-        {
+        if ($this->config->item('maintenance')) {
+            redirect(base_url('maintenance'));
             $this->load->view('auth/maintenance');
-            die();
         }
     }
 
     /*
      * The default home page, checks if not log in, then log in or load the home page
      */
-    public function index()
-    {
+    public function index() {
         // Check if user is logged in
-        if (!$this->authentication->logged_in())
-        {
+        if (!$this->authentication->logged_in()) {
             // if not then call the base/login function
             redirect(base_url('login'));
             die();
@@ -37,8 +33,7 @@ class Base extends CI_Controller {
      *              If didn't log in, bring to log in page, or if it's a form
      *              then try to do the log in method
      */
-    public function login()
-    {
+    public function login() {
         // if user is already logged in, then go to home page
         if ($this->authentication->logged_in()) {
             redirect(base_url());

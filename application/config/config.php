@@ -48,7 +48,7 @@ $config['profiler'] = true;
 |--------------------------------------------------------------------------
 |
 */
-$config['maintenance'] = false;
+$config['maintenance'] = true;
 $config['maintenance_message'] = 'This site is down for maintenance.';
 
 /*
