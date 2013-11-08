@@ -35,7 +35,7 @@
                                     <!--Login Username-->
                                     <div class="large-3 columns form-text">Username</div>
                                     <div class="large-9 columns">
-                                        <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username">
+                                        <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username" required>
                                     </div>
                                 </div>
                                 <br/>
@@ -43,7 +43,7 @@
                                     <!--Login Password-->
                                     <div class="large-3 columns form-text">Password</div>
                                     <div class="large-9 columns">
-                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password">
+                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password" required>
                                     </div>
                                 </div>
                                 <br/>
@@ -75,7 +75,7 @@
                                     <!--New Username-->
                                     <div class="large-4 columns form-text">New Username</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username">
+                                        <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username" required>
                                     </div>
                                 </div>
                                 <br/>
@@ -83,7 +83,7 @@
                                     <!--New email-->
                                     <div class="large-4 columns form-text">Email</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf003;</div><input type="email" class="form-input" name="email">
+                                        <div class="input-icon font-awesome">&#xf003;</div><input type="email" class="form-input" name="email" pattern="[a-zA-Z]*@[a-zA-Z]*" required>
                                     </div>
                                 </div>
                                 <br/>
@@ -91,7 +91,7 @@
                                     <!--New Passwrord-->
                                     <div class="large-4 columns form-text">New Password</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password"> 
+                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password" required> 
                                     </div>
                                 </div>
                                 <br/>
@@ -99,7 +99,7 @@
                                     <!--Reconfirm new password-->
                                     <div class="large-4 columns form-text">Re-enter Password</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password-confirm">
+                                        <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password-confirm" required>
                                     </div>
                                 </div>
                                 <br/>
