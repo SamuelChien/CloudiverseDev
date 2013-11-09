@@ -29,7 +29,7 @@
             <section id="login-window">
                 <!--Foundation's javascript section-->
                 <div data-section="" class="section-container auto font-title" style="min-height: 51px;" data-section-resized="true">
-                    <section class="dropdown ">
+                    <section class="dropdown active">
                         <div data-section-title="" class="text-unselectable title"><a href="#panel1" class="text-unselectable"><span class="font-awesome mobile-tab-icon hide-for-medium-up"></span>Login</a></div>
                         <div data-section-content="" class="content">
                             <!--Login form-->
@@ -69,7 +69,7 @@
                             <p><a href="#"><u>Forgot</u> your username/password?</a></p>
                         </div>
                     </section>
-                    <section class="dropdown active">
+                    <section class="dropdown">
                         <div data-section-title="" class="text-unselectable title" style="left: 89px;"><a href="#panel2" class="text-unselectable"><span class="font-awesome mobile-tab-icon hide-for-medium-up"></span>Sign Up</a></div>
                         <div data-section-content="" class="content">
                             <!--Registration form-->
