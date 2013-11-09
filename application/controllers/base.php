@@ -11,6 +11,7 @@ class Base extends CI_Controller {
             redirect(base_url('maintenance'));
             $this->load->view('auth/maintenance');
         }
+		session_start();
     }
 
     /*
@@ -23,7 +24,6 @@ class Base extends CI_Controller {
             redirect(base_url('login'));
             die();
         }
-        
         // Load the homepage otherwise
         $this->load->view('home');
     }
@@ -42,21 +42,30 @@ class Base extends CI_Controller {
         $results = false;
         // Now, we check for any POST data
         if ($this->input->post()) {
-            // If there was a 'login' varaible, then the login form was sent
-            if ($this->input->post('login')) {
+            // If the form type is login then perform the login process
+            if ($this->input->post('formtype') == "login") {
                 $results = $this->authentication->login(
                     $this->input->post('username'),
                     $this->input->post('password')
                 );
             }
-            // If there was a 'signup' varaible, then the signup form was sent
-            elseif ($this->input->post('signup')){
-                $results = $this->authentication->signup(
-                    $this->input->post('username'),
-                    $this->input->post('email'),
-                    $this->input->post('password'),
-                    $this->input->post('password-confirm')
-                );
+            // If the form type is signup, then signup a new user
+            elseif ($this->input->post('formtype') == "signup"){
+				$this->load->library('form_validation');
+				$_SESSION['confirm'] = $this->input->post('password-confirm');
+				$this->form_validation->set_rules('password', 'Password', 'callback_passwordCheck');  // Verify if the password and the confirmed password are the same
+
+				if ($this->form_validation->run()) {
+					$results = $this->authentication->signup(
+						$this->input->post('username'),
+						$this->input->post('email'),
+						$this->input->post('password'),
+						$this->input->post('password-confirm')
+					);
+				} else {
+					$_SESSION['error'] = "Password you entered do not match!" . $this->input->post('password'). " " . $this->input->post('password-confirm');
+					redirect(base_url('login'));
+				}
             }
             // Login was Successful
             if ($results) {
@@ -82,6 +91,28 @@ class Base extends CI_Controller {
         redirect(base_url('login'));
         die();
     }
+	
+	public function passwordCheck($confirm)
+	{
+		/*
+		 * Validation rule to check the confirm password matches the entered password
+		 */
+		if($_SESSION['confirm'] == $confirm)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	
+	public function usernameCheck($username)
+	{
+		/*
+		 * Make sure that the username is unique in the database
+		 */
+	}
 }
 /* End of file base.php */
 /* Location: ../application/controllers/base.php */

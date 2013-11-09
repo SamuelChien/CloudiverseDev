@@ -34,6 +34,7 @@
                         <div data-section-content="" class="content">
                             <!--Login form-->
                             <form method="post">
+								<input name="formtype" type="hidden" value="login">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
                                     <!--Login Username-->
@@ -74,6 +75,15 @@
                         <div data-section-content="" class="content">
                             <!--Registration form-->
                             <form method="post">
+								<?php 
+								if (isset ($_SESSION['error']))
+								{
+									echo $_SESSION['error'];
+									unset($_SESSION['error']);
+								}
+
+								?>
+								<input name="formtype" type="hidden" value="signup">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
                                     <!--New Username-->
@@ -87,12 +97,13 @@
                                     <!--New email-->
                                     <div class="large-4 columns form-text">Email</div>
                                     <div class="large-8 columns">
-                                        <div class="input-icon font-awesome">&#xf003;</div><input type="email" class="form-input" name="email" pattern="[a-zA-Z]*@[a-zA-Z]*" required>
+                                        <div class="input-icon font-awesome">&#xf003;</div><input type="email" class="form-input" name="email" pattern=".*@.*" required>
                                     </div>
                                 </div>
                                 <br/>
                                 <div class="row">
                                     <!--New Passwrord-->
+									
                                     <div class="large-4 columns form-text">New Password</div>
                                     <div class="large-8 columns">
                                         <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password" required> 
