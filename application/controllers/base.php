@@ -63,7 +63,7 @@ class Base extends CI_Controller {
 						$this->input->post('password-confirm')
 					);
 				} else {
-					$_SESSION['error'] = "Password you entered do not match!" . $this->input->post('password'). " " . $this->input->post('password-confirm');
+					$_SESSION['error'] = "Password you entered do not match!";
 					redirect(base_url('login'));
 				}
             }
