@@ -1,0 +1,97 @@
+$footerHt: 60px;
+$maxPageWidth: 1500px;
+/*Import Custom Google Fonts*/
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
+
+/*Import FontAwesome*/
+@font-face {
+  font-family: "FontAwesome";
+  font-style: normal;
+  font-weight: normal;
+  src: url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.eot?v=3.2.1") format("embedded-opentype"), url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.woff?v=3.2.1") format("woff"), url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.tff?v=3.2.1") format("truetype"); }
+
+// We use this to do clear floats
+@mixin clearfix() {
+  *zoom:1;
+  &:before, &:after { content: " "; display: table; }
+  &:after { clear: both; }
+}
+  
+/*the sticky footer settings*/
+html, body {height: 100%;}
+#main-body {
+  overflow:auto;
+  padding-bottom: $footerHt;
+}
+footer {
+  position: relative;
+  margin-top: -$footerHt;
+  height: $footerHt;
+  clear:both;
+}
+body:before {
+  content:"";
+  height:100%;
+  float:left;
+  width:0;
+  margin-top:-32767px;
+}
+/*End: the sticky footer settings*/
+
+
+a, a:visited, a:active{
+  color: inherit;text-decoration: none;
+}
+
+li, ul{
+  margin: 0; list-style: none; padding: 0;
+}
+#main-body{
+  margin-top: 50px;
+  min-height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+.font-awesome{
+  font-family: FontAwesome;
+}
+
+.font-title{
+  font-family: 'Oxygen', sans-serif;
+}
+
+.seperator{
+  width: 100%;
+  margin: 15px 0;
+  height: 1px;
+  background: rgba(255,255,255,0.3);
+}
+
+.text-center{
+  text-align:center;
+}
+.text-right{
+  text-align: right;
+}
+.text-left{
+  text-align: left;
+}
+.float-left{
+  float: left;
+}
+.float-right{
+  float: right
+}
+.text-unselectable{
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -o-user-select: none;
+  user-select: none;
+}
+.container{
+  margin: 0 auto;
+  width: 100%;
+  max-width: $maxPageWidth;
+}
