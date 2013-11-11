@@ -60,7 +60,7 @@ class Base extends CI_Controller {
     	 */
     	$data['header_JS_inc'] = array(
         	'http://code.jquery.com/ui/1.10.3/jquery-ui.js',
-        	base_url('asset/js/file-repo.js')
+        	base_url('asset/js/fileCanvas.js')
     	);
     	// Set this to true if you wish to display the nav bar.
     	$data['header_nav_display'] = True;
