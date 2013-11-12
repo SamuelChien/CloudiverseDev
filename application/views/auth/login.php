@@ -8,6 +8,13 @@
                         <div data-section-content="" class="content">
                             <!--Login form-->
                             <form method="post">
+								<?php 
+								if (isset ($_SESSION['errorlogin']))
+								{
+									echo $_SESSION['errorlogin'];
+									unset($_SESSION['errorlogin']);
+								}
+								?>
 								<input name="formtype" type="hidden" value="login">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
@@ -26,6 +33,13 @@
                                     </div>
                                 </div>
                                 <br/>
+								<div class="row">
+									<div class="large-3 columns form-text">Type</div>
+									<div class="large-9 columns">
+										<input type="text" id="captcha-input" name="captcha-input"/>
+										<?php echo $captcha;?>
+									</div>
+								</div>
                                 <div class="row">
                                     <!--Stay logged in checkbox-->
                                     <div class="form-checkbox">
@@ -49,13 +63,12 @@
                         <div data-section-content="" class="content">
                             <!--Registration form-->
                             <form method="post">
-								<?php 
-								if (isset ($_SESSION['error']))
+								<?php
+								if (isset ($_SESSION['errorsignup']))
 								{
-									echo $_SESSION['error'];
-									unset($_SESSION['error']);
+									echo $_SESSION['errorsignup'];
+									unset($_SESSION['errorsignup']);
 								}
-
 								?>
 								<input name="formtype" type="hidden" value="signup">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
@@ -114,5 +127,4 @@
             <script type="text/javascript" src="<?php echo base_url('asset/js/foundation/foundation.js'); ?>"></script>
             <script type="text/javascript" src="<?php echo base_url('asset/js/foundation/foundation.section.js'); ?>"></script>
             <script>$(document).foundation();</script>
-            </section>
-<?php $this->load->view('i/footer'); ?>
+        </section>

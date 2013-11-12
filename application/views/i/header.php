@@ -33,7 +33,15 @@
                     <li class="hide-for-small float-right">
                         <a href="#"><span class="font-awesome nav-icon">&#xf013;</span> Settings</a>
                     </li>
+					<li class="hide-for-small float-right">
+						<?php if (isset($_SESSION['user'])) 
+							{
+								echo "Hello " . $_SESSION['user'];
+							}
+						?>
+					</li>
                     <li class="hide-for-small float-right" id="logout">
+						
                         <a href="<?php echo base_url('logout');?>"><span class="font-awesome nav-icon">&#xf011;</span> Logout</a>
                     </li>
                     <li class="show-for-small float-right" id="mobile-nav-grabber">

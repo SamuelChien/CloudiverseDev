@@ -44,7 +44,7 @@ class Base extends CI_Controller {
             die();
         }
         // Load the homepage otherwise
-	$data = array();
+		$data = array();
     	// A unique identifier for this page (used for CSS styling)
     	$data['body_ID'] = "home-page";
     	// Text that should be placed in the title tag in the head
@@ -81,36 +81,68 @@ class Base extends CI_Controller {
             redirect(base_url());
 	    die();
         }
-        
+		
+
         $results = false;
         // Now, we check for any POST data
         if ($this->input->post()) {
             // If the form type is login then perform the login process
             if ($this->input->post('formtype') == "login") {
+				// Check the captcha
+				if ($this->input->post('captcha-input') != $_SESSION['captcha']) {
+					$_SESSION['errorlogin'] = "Captcha you entered is not correct!";
+					redirect(base_url('login'));
+				}
+				
+				// Captcha correct, check the user password and username
                 $results = $this->authentication->login(
                     $this->input->post('username'),
                     $this->input->post('password')
                 );
+				
+				// If login is unsuccessful, stay in the login page
+				if ($results == false) {
+					$_SESSION['errorlogin'] = "Username or password you entered do not match!";
+					redirect(base_url('login'));
+				}
+				else{
+					$_SESSION['user'] = $results;  // use to display the username on header
+					redirect(base_url());
+
+				}
             }
+
             // If the form type is signup, then signup a new user
             elseif ($this->input->post('formtype') == "signup"){
+				// Check username availability
+				$this->db->select('uname');
+				$query = $this->db->get('users');
+				foreach ($query->result() as $user)
+				{
+					if ($user->uname == $this->input->post('username')) {
+						// If the username is not available redirect the user to login page and display error message
+						$_SESSION['errorsignup'] = "User name unavailable!!";
+						redirect(base_url('login'));
+					}
+				}
+				// Verify if the password and the confirmed password are the same
 				$this->load->library('form_validation');
 				$_SESSION['confirm'] = $this->input->post('password-confirm');
-				$this->form_validation->set_rules('password', 'Password', 'callback_passwordCheck');  // Verify if the password and the confirmed password are the same
+				$this->form_validation->set_rules('password', 'Password', 'callback_passwordCheck');
 
 				if ($this->form_validation->run()) {
+					// If the password match, sign-up the user to database
 					$results = $this->authentication->signup(
 						$this->input->post('username'),
 						$this->input->post('email'),
-						$this->input->post('password'),
-						$this->input->post('password-confirm')
+						$this->input->post('password')
 					);
 				} else {
-					$_SESSION['error'] = "Password you entered do not match!";
+					$_SESSION['errorsignup'] = "Password you entered do not match!";
 					redirect(base_url('login'));
 				}
             }
-            // Login was Successful
+            // Signup was Successful
             if ($results) {
                 redirect(base_url());
             }
@@ -137,8 +169,24 @@ class Base extends CI_Controller {
     	$data['header_nav_display'] = False;
 
     	// Load the header file!
+				// Generate a captcha
+		$this->load->helper('captcha');
+		$vals = array(
+			'word' => '',
+			'img_path' => './captcha/',
+			'img_url' => base_url() . 'captcha/',
+			'font_path' => base_url('asset/font/font'),
+			'img_width' => 150,
+			'img_height' => 30,
+			'expiration' => 7200
+		);
+		$captcha = create_captcha($vals);
+		$_SESSION['captcha'] = $captcha['word'];
+		echo $captcha['word'];
+		$data['captcha'] = $captcha['image'];
     	$this->load->view('i/header', $data);
-        $this->load->view('auth/login');
+        $this->load->view('auth/login', $data);
+		$this->load->view('i/footer');
     }
 
     /*
@@ -169,13 +217,6 @@ class Base extends CI_Controller {
 		{
 			return false;
 		}
-	}
-	
-	public function usernameCheck($username)
-	{
-		/*
-		 * Make sure that the username is unique in the database
-		 */
 	}
 }
 /* End of file base.php */
