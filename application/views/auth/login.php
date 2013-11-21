@@ -1,4 +1,10 @@
         <section id="main-body">
+            <?php
+                // Display the alert box for any login errors.
+                if (isset ($_SESSION['errorMessage'])) {
+                    echo '<section class="alert-box alert-error">' . $_SESSION['errorMessage'] . "</section>";
+                }
+            ?>
             <!--The login window div-->
             <section id="login-window">
                 <!--Foundation's javascript section-->
@@ -8,19 +14,12 @@
                         <div data-section-content="" class="content">
                             <!--Login form-->
                             <form method="post">
-								<?php 
-								if (isset ($_SESSION['errorlogin']))
-								{
-									echo $_SESSION['errorlogin'];
-									unset($_SESSION['errorlogin']);
-								}
-								?>
-								<input name="formtype" type="hidden" value="login">
+                                <input name="formtype" type="hidden" value="login">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
                                     <!--Login Username-->
                                     <div class="large-3 columns form-text">Username</div>
-                                    <div class="large-9 columns">
+                                    <div class="large-9 columns<?php if (isset ($_SESSION['errorLoginUsername'])) echo' error';?>">
                                         <div class="input-icon font-awesome">&#xf007;</div><input type="text" class="form-input" name="username" required>
                                     </div>
                                 </div>
@@ -28,30 +27,31 @@
                                 <div class="row">
                                     <!--Login Password-->
                                     <div class="large-3 columns form-text">Password</div>
-                                    <div class="large-9 columns">
+                                    <div class="large-9 columns<?php if (isset ($_SESSION['errorLoginPassword'])) echo' error';?>">
                                         <div class="input-icon font-awesome">&#xf084;</div><input type="password" class="form-input" name="password" required>
                                     </div>
                                 </div>
                                 <br/>
-								<div class="row">
-									<div class="large-3 columns form-text">Type</div>
-									<div class="large-9 columns">
-										<input type="text" id="captcha-input" name="captcha-input"/>
-										<?php echo $captcha;?>
-									</div>
-								</div>
+                                <div class="row">
+                                    <!--Captcha-->
+                                    <div class="large-3 columns form-text">Type</div>
+                                    <div class="large-9 columns<?php if (isset ($_SESSION['errorLoginCaptcha'])) echo' error';?>">
+                                        <div class="input-icon font-awesome">&#xf044;</div><input type="text" id="captcha-input" name="captcha-input"/>
+                                        <?php echo $captcha;?>
+                                    </div>
+                                </div>
                                 <div class="row">
                                     <!--Stay logged in checkbox-->
                                     <div class="form-checkbox">
                                         <input type="checkbox" id="keep-logged-in" name="keep-logged-in" />
                                         <label for="keep-logged-in"><span></span>Stay Logged in</label>
                                     </div>
-                                </div>
+                                </div>                                
                                 <br/><br/>
                                 <div class="row">
                                     <!--Submit-->
                                     <input type="submit" class="form-submit large-3 large-centered columns" value="Login" name="login">
-                                </div>
+                                </div>7
                             </form>
                             <div class="seperator"></div>
                             <!--Link to forgot your password/username page-->
@@ -63,14 +63,7 @@
                         <div data-section-content="" class="content">
                             <!--Registration form-->
                             <form method="post">
-								<?php
-								if (isset ($_SESSION['errorsignup']))
-								{
-									echo $_SESSION['errorsignup'];
-									unset($_SESSION['errorsignup']);
-								}
-								?>
-								<input name="formtype" type="hidden" value="signup">
+                                <input name="formtype" type="hidden" value="signup">
                                 <p class="text-center" style="color:#747474;padding: 30px 0">>LOGO HERE<</p>
                                 <div class="row">
                                     <!--New Username-->
@@ -119,6 +112,13 @@
                                 </div>
                             </form>
                         </div>
+                        <?php
+                            // Start removing the error messages, only when we are done using them
+                            unset($_SESSION['errorMessage']);
+                            unset($_SESSION['errorLoginUsername']);
+                            unset($_SESSION['errorLoginPassword']);
+                            unset($_SESSION['errorLoginCaptcha']);
+                        ?>
                     </section>
                 </div>
             </section>

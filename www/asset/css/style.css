@@ -1,16 +1,11 @@
-@font-face {
-  font-family: 'Oxygen';
-  font-style: normal;
-  font-weight: 400;
-  src: local('Oxygen'), local('Oxygen-Regular'), url(https://cloudiverse.com/asset/font/font/eAWT4YudG0otf3rlsJD6zOvvDin1pK8aKteLpeZ5c0A.woff) format('woff');
-}
+@import url(http://fonts.googleapis.com/css?family=Oxygen);
 /*Import Custom Google Fonts*/
 /*Import FontAwesome*/
 @font-face {
   font-family: "FontAwesome";
   font-style: normal;
   font-weight: normal;
-  src: url("https://cloudiverse.com/asset/font/font/fontawesome-webfont.eot") format("embedded-opentype"), url("https://cloudiverse.com/asset/font/font/fontawesome-webfont.woff") format("woff"), url("https://cloudiverse.com/asset/font/font/fontawesome-webfont.ttf") format("truetype"); }
+  src: url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.eot?v=3.2.1") format("embedded-opentype"), url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.woff?v=3.2.1") format("woff"), url("http://cdnjs.cloudflare.com/ajax/libs/font-awesome/3.2.1/font/fontawesome-webfont.tff?v=3.2.1") format("truetype"); }
 
 /*the sticky footer settings*/
 html, body {
@@ -49,10 +44,10 @@ li, ul {
   width: 100%;
   position: relative; }
 
-.font-awesome {
+.font-awesome, .alert-box:before {
   font-family: FontAwesome; }
 
-.font-title {
+.font-title, .alert-box {
   font-family: 'Oxygen', sans-serif; }
 
 .seperator {
@@ -146,6 +141,10 @@ header nav {
 #login-page {
   background-image: url("../img/bg/1.png");
   /*Styling for the entire login window goes here*/ }
+  #login-page .alert-box, #login-page #login-window {
+    width: 90%;
+    max-width: 550px;
+    margin: 25px auto; }
   #login-page #login-window {
     -webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.71);
     -moz-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.71);
@@ -155,9 +154,6 @@ header nav {
     border-radius: 5px;
     background: #444444;
     color: #FFF;
-    width: 90%;
-    max-width: 550px;
-    margin: 50px auto;
     overflow: hidden; }
     #login-page #login-window .seperator {
       background: rgba(255, 255, 255, 0.1); }
@@ -277,3 +273,42 @@ header nav {
       background: #594f4c;
       color: #E9E9E9;
       border-bottom-color: transparent; }
+
+.alert-box {
+  background: red;
+  padding: 15px;
+  margin: 0 15px 15px 15px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  line-height: 20px;
+  -webkit-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.71);
+  -moz-box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.71);
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.71); }
+  .alert-box:before {
+    padding: 0 20px;
+    font-size: 20px; }
+  .alert-box.alert-error {
+    /*Error Styles (Red)*/
+    background: #F2DEDE;
+    color: #B94A48; }
+    .alert-box.alert-error:before {
+      content: "\f00d"; }
+  .alert-box.alert-success {
+    /*Success Styles (Green)*/
+    background: #DFF0D8;
+    color: #468847; }
+    .alert-box.alert-success:before {
+      content: "\f00c"; }
+  .alert-box.alert-warning {
+    /*Warning Styles (Yellow)*/
+    background: #FCF8E3;
+    color: #C09853; }
+    .alert-box.alert-warning:before {
+      content: "\f06a"; }
+  .alert-box.alert-info {
+    /*Information Styles (Blue)*/
+    background: #D9EDF7;
+    color: #3A87AD; }
+    .alert-box.alert-info:before {
+      content: "\f129"; }

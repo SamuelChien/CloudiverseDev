@@ -90,7 +90,8 @@ class Base extends CI_Controller {
             if ($this->input->post('formtype') == "login") {
 				// Check the captcha
 				if ($this->input->post('captcha-input') != $_SESSION['captcha']) {
-					$_SESSION['errorlogin'] = "Captcha you entered is not correct!";
+					$_SESSION['errorMessage'] = "Captcha you entered is not correct!";
+          $_SESSION['errorLoginCaptcha'] = true;
 					redirect(base_url('login'));
 				}
 				
@@ -102,7 +103,10 @@ class Base extends CI_Controller {
 				
 				// If login is unsuccessful, stay in the login page
 				if ($results == false) {
-					$_SESSION['errorlogin'] = "Username or password you entered do not match!";
+					$_SESSION['errorMessage'] = "Username or password you entered did not match!";
+          // Set these variables so that we show the errors on the logign page properly with CSS.
+          $_SESSION['errorLoginUsername'] = true;
+          $_SESSION['errorLoginPassword'] = true;
 					redirect(base_url('login'));
 				}
 				else{
@@ -121,7 +125,7 @@ class Base extends CI_Controller {
 				{
 					if ($user->uname == $this->input->post('username')) {
 						// If the username is not available redirect the user to login page and display error message
-						$_SESSION['errorsignup'] = "User name unavailable!!";
+						$_SESSION['errorMessage'] = "User name unavailable!!";
 						redirect(base_url('login'));
 					}
 				}
@@ -138,7 +142,7 @@ class Base extends CI_Controller {
 						$this->input->post('password')
 					);
 				} else {
-					$_SESSION['errorsignup'] = "Password you entered do not match!";
+					$_SESSION['errorMessage'] = "Password you entered does not match!";
 					redirect(base_url('login'));
 				}
             }
