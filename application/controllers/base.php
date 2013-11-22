@@ -89,9 +89,9 @@ class Base extends CI_Controller {
             // If the form type is login then perform the login process
             if ($this->input->post('formtype') == "login") {
 				// Check the captcha
-				if ($this->input->post('captcha-input') != $_SESSION['captcha']) {
+				if ($this->input->post('captcha-input') != $_SESSION['captcha'] || $this->input->post('captcha-input')=="") {
 					$_SESSION['errorMessage'] = "Captcha you entered is not correct!";
-          $_SESSION['errorLoginCaptcha'] = true;
+			        $_SESSION['errorLoginCaptcha'] = true;
 					redirect(base_url('login'));
 				}
 				
@@ -104,15 +104,14 @@ class Base extends CI_Controller {
 				// If login is unsuccessful, stay in the login page
 				if ($results == false) {
 					$_SESSION['errorMessage'] = "Username or password you entered did not match!";
-          // Set these variables so that we show the errors on the logign page properly with CSS.
-          $_SESSION['errorLoginUsername'] = true;
-          $_SESSION['errorLoginPassword'] = true;
+				 	 // Set these variables so that we show the errors on the logign page properly with CSS.
+				  	$_SESSION['errorLoginUsername'] = true;
+				  	$_SESSION['errorLoginPassword'] = true;
 					redirect(base_url('login'));
 				}
 				else{
 					$_SESSION['user'] = $results;  // use to display the username on header
 					redirect(base_url());
-
 				}
             }
 

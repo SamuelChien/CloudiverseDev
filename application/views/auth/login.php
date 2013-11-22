@@ -51,7 +51,7 @@
                                 <div class="row">
                                     <!--Submit-->
                                     <input type="submit" class="form-submit large-3 large-centered columns" value="Login" name="login">
-                                </div>7
+                                </div>
                             </form>
                             <div class="seperator"></div>
                             <!--Link to forgot your password/username page-->
