@@ -8,7 +8,13 @@ class Example extends CI_Controller
         $this->load->library('session');
         $this->load->helper('url');
     }
-    // Call this method first by visiting http://SITE_URL/example/request_dropbox
+    // Call this method first by visiting http://SITE_URL/example/request_google_drive
+    public function request_google_drive()
+    {
+        $this->load->library('drive');
+        redirect($this->drive->createAuthURL());
+    }
+
     public function request_dropbox()
 	{
 		$params['key']    = $this->config->item('dropbox_key');;
@@ -19,8 +25,17 @@ class Example extends CI_Controller
 		$this->session->set_userdata('token_secret', $data['token_secret']);
 		redirect($data['redirect']);
 	}
-	//This method should not be called directly, it will be called after 
+
+
+    //This method should not be called directly, it will be called after 
     //the user approves your application and dropbox redirects to it
+    public function access_google_drive()
+    {
+        $google_drive_auth_key =  $this->input->get('code', TRUE);
+        $this->session->set_userdata('google_drive_auth_key', $google_drive_auth_key);
+        redirect('example/test_google_drive');
+    }
+
 	public function access_dropbox()
 	{
 		$params['key']    = $this->config->item('dropbox_key');
@@ -34,10 +49,28 @@ class Example extends CI_Controller
 		$this->session->set_userdata('oauth_token_secret', $oauth['oauth_token_secret']);
         redirect('example/test_dropbox');
 	}
-	//Once your application is approved you can proceed to load the library
+
+    //Once your application is approved you can proceed to load the library
     //with the access token data stored in the session. If you see your account
     //information printed out then you have successfully authenticated with
-    //dropbox and can use the library to interact with your account.
+    //google drive and can use the library to interact with your account.
+    public function test_google_drive()
+    {
+        $auth_key = $this->session->userdata('google_drive_auth_key');
+        $this->load->library('drive');
+        $this->drive->authentication($auth_key);
+
+        //$localPath = 'asset/css/style.css';
+        //$serverPath = "test.css";
+        //$this->drive->uploadFile($localPath, $serverPath);
+
+        $localPath = $_SERVER['DOCUMENT_ROOT'].'/asset/files/niu.txt';
+        $serverPath = "test.css";
+        $this->drive->downloadFile($localPath, $serverPath);
+
+        $data['key'] = $auth_key;
+        $this->load->view('test', $data);
+    }
 	public function test_dropbox()
 	{
 		$params['key']    = $this->config->item('dropbox_key');;
