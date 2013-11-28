@@ -60,9 +60,9 @@ class Example extends CI_Controller
             $this->common->alert($subject, $message, __FILE__, __LINE__);
         }
         */
-        /*
-        $error = $this->dropbox->get($_SERVER['DOCUMENT_ROOT'].'/asset/files/test.txt', 'style.css');
-        */
+        
+        //$error = $this->dropbox->get($_SERVER['DOCUMENT_ROOT'].'/asset/files/niadfasdfasdfasdfu.txt', 'style.css');
+    
         $this->load->view('auth/login');
 	}
 }

@@ -1,7 +1,11 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
-class Drive extends CI_Controller
+class Gdrive extends CI_Controller
 {
+    public function __construct()
+    {
+        parent::__construct();
+    }
     // Call this method first by visiting http://SITE_URL/example/request_dropbox
     public function upload()
 	{
@@ -14,7 +18,7 @@ class Drive extends CI_Controller
 	}
     public function download()
     {
-
+        redirect("/login/");
     }
     public key()
     {

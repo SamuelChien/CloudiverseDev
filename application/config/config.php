@@ -26,6 +26,8 @@ $config['system_name']      = 'Cloudiverse';
 $config['system_email']     = 'samuelchien821@gmail.com';
 $config['dropbox_key']      = 'tflg23rhybf5x0l';
 $config['dropbox_secret']   = '827kr5s1qyxpr2o';
+$config['drive_key']        = '976048223358.apps.googleusercontent.com';
+$config['drive_secret']     = 'shh7cERJb1y3UrQGAN92z4De';
 /*
 |--------------------------------------------------------------------------
 | Version String
