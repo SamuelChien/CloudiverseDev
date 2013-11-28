@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples
+END
+GenerateSavedReport.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GenerateSavedReport.php
+END
+GetAllSavedReports.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllSavedReports.php
+END
+GetAllAdUnitsForCustomChannel.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllAdUnitsForCustomChannel.php
+END
+GetAllCustomChannelsForAdUnit.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllCustomChannelsForAdUnit.php
+END
+GetAllAdClients.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllAdClients.php
+END
+GetAllCustomChannels.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllCustomChannels.php
+END
+GetAllMetrics.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllMetrics.php
+END
+GetAllAdUnits.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllAdUnits.php
+END
+GetAllPreferredDeals.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllPreferredDeals.php
+END
+GetAllDimensions.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllDimensions.php
+END
+GetAllAlerts.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllAlerts.php
+END
+GenerateReport.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GenerateReport.php
+END
+GetAllUrlChannels.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GetAllUrlChannels.php
+END
+GenerateReportWithPaging.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/605/trunk/examples/adexchangeseller/examples/GenerateReportWithPaging.php
+END
