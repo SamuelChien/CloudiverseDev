@@ -8,29 +8,29 @@ class Base extends CI_Controller {
     public function __construct() {
         parent::__construct();
         if ($this->config->item('maintenance')) {
-    		$data = array();
-    		// A unique identifier for this page (used for CSS styling)
-    		$data['body_ID'] = "maintenance-page";
-    		// Text that should be placed in the title tag in the head
-    		$data['page_title'] = "Site is down";
-    		/*
-     		*  Add addition CSS stylesheets here!
-     		*  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SYTLESHEETS');
-     		*/
-    		$data['header_CSS_inc'] = array();
-    		/*
-     		*  Add addition CSS stylesheets here!
-     		*  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SCRIPTS');
-     		*/
-    		$data['header_JS_inc'] = array();
-    		// Set this to true if you wish to display the nav bar.
-    		$data['header_nav_display'] = False;
-
-   	 	// Load the header file!
-    		$this->load->view('i/header', $data);
-		$this->load->view('auth/maintenance');
+            $data = array();
+            // A unique identifier for this page (used for CSS styling)
+            $data['body_ID'] = "maintenance-page";
+            // Text that should be placed in the title tag in the head
+            $data['page_title'] = "Site is down";
+            /*
+            *  Add addition CSS stylesheets here!
+            *  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SYTLESHEETS');
+            */
+            $data['header_CSS_inc'] = array();
+            /*
+            *  Add addition CSS stylesheets here!
+            *  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SCRIPTS');
+            */
+            $data['header_JS_inc'] = array();
+            // Set this to true if you wish to display the nav bar.
+            $data['header_nav_display'] = False;
+    
+          // Load the header file!
+            $this->load->view('i/header', $data);
+            $this->load->view('auth/maintenance');
         }
-	session_start();
+        session_start();
     }
     
     /*
@@ -44,30 +44,31 @@ class Base extends CI_Controller {
             die();
         }
         // Load the homepage otherwise
-		$data = array();
-    	// A unique identifier for this page (used for CSS styling)
-    	$data['body_ID'] = "home-page";
-    	// Text that should be placed in the title tag in the head
-    	$data['page_title'] = "Welcome";
-    	/*
-    	 *  Add addition CSS stylesheets here!
-     	 *  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SYTLESHEETS');
-     	 */
-    	$data['header_CSS_inc'] = array();
-    	/*
-    	 *  Add addition CSS stylesheets here!
-    	 *  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SCRIPTS');
-    	 */
-    	$data['header_JS_inc'] = array(
-        	'http://code.jquery.com/ui/1.10.3/jquery-ui.js',
-        	base_url('asset/js/fileCanvas.js')
-    	);
-    	// Set this to true if you wish to display the nav bar.
-    	$data['header_nav_display'] = True;
-
-    	// Load the header file!
-    	$this->load->view('i/header', $data);
-        $this->load->view('home');
+        $data = array();
+        // A unique identifier for this page (used for CSS styling)
+        $data['body_ID'] = "home-page";
+        // Text that should be placed in the title tag in the head
+        $data['page_title'] = "Welcome";
+        /*
+         *  Add addition CSS stylesheets here!
+         *  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SYTLESHEETS');
+         */
+        $data['header_CSS_inc'] = array();
+        /*
+         *  Add addition CSS stylesheets here!
+         *  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SCRIPTS');
+         */
+        $data['header_JS_inc'] = array(
+            base_url('asset/js/foundation/foundation.joyride.js'),
+            'http://code.jquery.com/ui/1.10.3/jquery-ui.js',
+            base_url('asset/js/fileCanvas.js')
+        );
+        // Set this to true if you wish to display the nav bar.
+        $data['header_nav_display'] = True;
+        
+        // Load the header file!
+        $this->load->view('i/header', $data);
+        $this->load->view('home', $data);
     }
 
     /*
@@ -79,7 +80,7 @@ class Base extends CI_Controller {
         // if user is already logged in, then go to home page
         if ($this->authentication->logged_in()) {
             redirect(base_url());
-	    die();
+            die();
         }
 		
 
@@ -187,9 +188,9 @@ class Base extends CI_Controller {
 		$_SESSION['captcha'] = $captcha['word'];
 		echo $captcha['word'];
 		$data['captcha'] = $captcha['image'];
-    	$this->load->view('i/header', $data);
-        $this->load->view('auth/login', $data);
-		$this->load->view('i/footer');
+    $this->load->view('i/header', $data);
+    $this->load->view('auth/login', $data);
+    //$this->load->view('i/header', $data); // Login page doesn't need a footer.
     }
 
     /*
