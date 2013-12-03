@@ -1,5 +1,4 @@
 $(document).ready(function() {
-
   var filelist = $("#file-list ul");
 
   //filelist.sortable();
@@ -63,27 +62,27 @@ $(document).ready(function() {
 
   // If the "Create Folder" button was pressed, add a new folder
   $("#newF-button").click(function() {
-      filelist.append('<li class="type-folder">\
-          <div class="name">New Folder</div>\
-          <div class="icon share-link">&#xf14c;</div>\
-          <div class="icon delete-link">&#xf00d;</div>\
-          <div class="icon info-link">&#xf129;</div>\
-          <div class="filetype">Folder</div>\
-          <div class="date-modified">Just Now</div>\
-        </li>');
-      sortFilelistHTML('name');
+    filelist.append('<li class="type-folder">\
+        <div class="name">New Folder</div>\
+        <div class="icon share-link">&#xf14c;</div>\
+        <div class="icon delete-link">&#xf00d;</div>\
+        <div class="icon info-link">&#xf129;</div>\
+        <div class="filetype">Folder</div>\
+        <div class="date-modified">Just Now</div>\
+      </li>');
+    sortFilelistHTML('name');
   });
 
   // If the "Upload" button was pressed, add a new file
   $("#upload-button").click(function() {
-      filelist.append('<li class="type-file">\
-          <div class="name">New File</div>\
-          <div class="icon share-link">&#xf14c;</div>\
-          <div class="icon delete-link">&#xf00d;</div>\
-          <div class="icon info-link">&#xf129;</div>\
-          <div class="filetype">File</div>\
-          <div class="date-modified">Just Now</div>\
-        </li>');
-      sortFilelistHTML('name');
+    filelist.append('<li class="type-file">\
+        <div class="name">New File</div>\
+        <div class="icon share-link">&#xf14c;</div>\
+        <div class="icon delete-link">&#xf00d;</div>\
+        <div class="icon info-link">&#xf129;</div>\
+        <div class="filetype">File</div>\
+        <div class="date-modified">Just Now</div>\
+      </li>');
+    sortFilelistHTML('name');
   });
 });
