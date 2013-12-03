@@ -1,3 +1,15 @@
+// Foundation Components
+@import
+  "foundation/settings",
+  "foundation/components/global",
+  "foundation/components/grid",
+  "foundation/components/joyride",
+  "foundation/components/tabs",
+  "foundation/components/visibility";
+  
+// Normalize.scss for cross-browser support
+@import "normalize";
+
 // Begin inporting our CSS for the site here!
 @import
   "cloudiverse/global",
@@ -7,4 +19,5 @@
   "cloudiverse/pageHome";
   
   @import
-    "cloudiverse/components/alertBox";
+    "cloudiverse/components/alertBox",
+    "cloudiverse/components/progressBar";

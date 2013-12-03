@@ -1,59 +1,63 @@
 header{
-
-  nav{
+  $hover-colour: #BAB9BE;
+  $normal-colour: rgba(228,222,208,0.5);
+  
+  #desktop-nav {
     width: 100%;
     height: 40px;
-    background: rgba(24,22,25,0.9);
+    /*background: rgba(24,22,25,0.9);*/
+    background: #000;
+    line-height: 40px;
+    padding: 0 25px;
+    padding-bottom: 1px;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: $hover-colour;
     
-    #desktop-nav {
-      line-height: 35px;
-      padding: 0 25px;
-      padding-bottom: 1px;
-      
-      > li {
-        color: rgba(228,222,208,0.5);
-        margin-left: 15px;
-        display: inline-block;
-        border-bottom: 4px transparent solid;
+    > li {
+      padding: 0 5px;
+      margin-left: 15px;
+      display: inline-block;
+
+      .nav-icon{
+        font-size: 14px;
+        @media #{$small} {
+          padding-right: 9px;
+        }
+      }
+      &:not(.not-link){
+        color: $normal-colour;
+        /*height: 100%;*/
         -webkit-transition: all 0.1s ease-in-out;
         -moz-transition: all 0.1s ease-in-out;
         -o-transition: all 0.1s ease-in-out;
         transition: all 0.1s ease-in-out;
-        cursor: pointer;
-        padding: 0 5px;
-        /*float: left;*/
-        
-        .nav-icon{
-          font-size: 14px; padding-right: 9px;
+
+        &.current-page, &:hover{
+          color: $hover-colour;
         }
       }
-      > li.current-page, > li:hover{
-        color: rgba(228,222,208,1);
-        border-bottom-color:#ABCCBD;
-      }
-      /*@include clearfix();*/
     }
-    #mobile-nav{
-      background: rgba(0,0,0,.75);
-      color: white;
+    @include clearfix();
+  }
+  #mobile-nav{
+    background: rgba(0,0,0,.9);
+    color: #FFF;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding-top: 30px;
+    z-index: 10;
+
+    > li{padding: 15px;}
+    #mobile-nav-close{
+      top: 15px;
+      right: 15px;
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      text-align: center;
-      padding-top: 30px;
-      z-index: 10;
-      
-      > li{
-        padding: 15px;
-      }
-      #mobile-nav-close{
-        top: 15px;
-        right: 15px;
-        position: absolute;
-        cursor: pointer;
-      }
+      cursor: pointer;
     }
   }
 }
