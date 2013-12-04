@@ -10,15 +10,10 @@
   foreach ($header_CSS_inc as $stylesheet) { ?>
     <link rel="stylesheet" type="text/css" href="<?php echo $stylesheet; ?>">
 <?php } ?>
-    <script type='text/javascript' src="<?php echo base_url('asset/js/header.js');?>"></script>
     <script type='text/javascript' src="<?php echo base_url('asset/js/vendor/custom.modernizr.js');?>"></script>
     <script type='text/javascript' src="<?php echo base_url('asset/js/jquery.min.js');?>"></script>
+    <script type='text/javascript' src="<?php echo base_url('asset/js/header.js');?>"></script>
     <script type='text/javascript' src="<?php echo base_url('asset/js/cloudiverse.js');?>"></script>
-<?php
-  // Custom JS includes goes here!
-  foreach ($header_JS_inc as $script) { ?>
-    <script type="text/javascript" src="<?php echo $script?>"></script>
-<?php } ?>
   </head>
   <body id="<?php echo $body_ID ?>">
     <header>

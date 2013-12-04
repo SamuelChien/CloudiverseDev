@@ -118,8 +118,15 @@
         unset($_SESSION['errorLoginCaptcha']);
         ?>
         <!--Foundation's javascript includes-->
-        <script>$(document).ready().foundation();</script>
+        <script type='text/javascript' src="<?php echo base_url('asset/js/foundation.min.js');?>"></script>
+<?php
+  // Custom JS includes goes here!
+  foreach ($header_JS_inc as $script) { ?>
+        <script type="text/javascript" src="<?php echo $script?>"></script>
+<?php } ?>
+        <script>$(document).foundation();</script>
       </section>
+    </section>
     <footer class="padding">
       <div id="version">v<?php echo config_item('version').' | Generated in '.$this->benchmark->elapsed_time().' seconds'; ?></div>
       <div id="legal">2013 &copy; Cloudiverse Inc. All rights reserved.</div>

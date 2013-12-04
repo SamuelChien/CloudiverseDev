@@ -168,8 +168,7 @@ class Base extends CI_Controller {
      	*  Add addition CSS stylesheets here!
      	*  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SCRIPTS');
      	*/
-    	$data['header_JS_inc'] = array(
-				base_url()."asset/js/foundation.min.js");
+    	$data['header_JS_inc'] = array();
     	// Set this to true if you wish to display the nav bar.
     	$data['header_nav_display'] = False;
 
