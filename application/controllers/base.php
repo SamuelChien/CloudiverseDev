@@ -89,31 +89,31 @@ class Base extends CI_Controller {
         if ($this->input->post()) {
             // If the form type is login then perform the login process
             if ($this->input->post('formtype') == "login") {
-				// Check the captcha
-				if ($this->input->post('captcha-input') != $_SESSION['captcha'] || $this->input->post('captcha-input')=="") {
-					$_SESSION['errorMessage'] = "Captcha you entered is not correct!";
-			        $_SESSION['errorLoginCaptcha'] = true;
-					redirect(base_url('login'));
-				}
-				
-				// Captcha correct, check the user password and username
-                $results = $this->authentication->login(
-                    $this->input->post('username'),
-                    $this->input->post('password')
-                );
-				
-				// If login is unsuccessful, stay in the login page
-				if ($results == false) {
-					$_SESSION['errorMessage'] = "Username or password you entered did not match!";
-				 	 // Set these variables so that we show the errors on the logign page properly with CSS.
-				  	$_SESSION['errorLoginUsername'] = true;
-				  	$_SESSION['errorLoginPassword'] = true;
-					redirect(base_url('login'));
-				}
-				else{
-					$_SESSION['user'] = $results;  // use to display the username on header
-					redirect(base_url());
-				}
+								// Check the captcha
+								if ($this->input->post('captcha-input') != $_SESSION['captcha'] || $this->input->post('captcha-input')=="") {
+										$_SESSION['errorMessage'] = "Captcha you entered is not correct!";
+										$_SESSION['errorLoginCaptcha'] = true;
+										redirect(base_url('login'));
+								}
+								
+								// Captcha correct, check the user password and username
+												$results = $this->authentication->login(
+														$this->input->post('username'),
+														$this->input->post('password')
+												);
+								
+								// If login is unsuccessful, stay in the login page
+								if ($results == false) {
+										// Set these variables so that we show the errors on the logign page properly with CSS.
+										$_SESSION['errorMessage'] = "Username or password you entered did not match!";
+										$_SESSION['errorLoginUsername'] = true;
+										$_SESSION['errorLoginPassword'] = true;
+										redirect(base_url('login'));
+								}
+								else{
+									$_SESSION['user'] = $results;  // use to display the username on header
+									redirect(base_url());
+								}
             }
 
             // If the form type is signup, then signup a new user
@@ -168,7 +168,8 @@ class Base extends CI_Controller {
      	*  Add addition CSS stylesheets here!
      	*  eg. $data['header_CSS_inc'] = array('LIST_OF_URLS_TO_SCRIPTS');
      	*/
-    	$data['header_JS_inc'] = array();
+    	$data['header_JS_inc'] = array(
+				base_url()."asset/js/foundation.min.js");
     	// Set this to true if you wish to display the nav bar.
     	$data['header_nav_display'] = False;
 

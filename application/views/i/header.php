@@ -5,18 +5,24 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
     <link rel="stylesheet" type="text/css" href="<?php echo base_url('asset/css/style.css');?>">
-    <script type='text/javascript' src="<?php echo base_url('asset/js/modernizr.js');?>"></script>
-    <script type='text/javascript' src="<?php echo base_url('asset/js/jquery.js');?>"></script>
-    <script type='text/javascript' src="<?php echo base_url('asset/js/cloudiverse.js');?>"></script>
 <?php
   // Custom CSS includes goes here!
   foreach ($header_CSS_inc as $stylesheet) { ?>
     <link rel="stylesheet" type="text/css" href="<?php echo $stylesheet; ?>">
 <?php } ?>
+    <script type='text/javascript' src="<?php echo base_url('asset/js/header.js');?>"></script>
+    <script type='text/javascript' src="<?php echo base_url('asset/js/vendor/custom.modernizr.js');?>"></script>
+    <script type='text/javascript' src="<?php echo base_url('asset/js/jquery.min.js');?>"></script>
+    <script type='text/javascript' src="<?php echo base_url('asset/js/cloudiverse.js');?>"></script>
+<?php
+  // Custom JS includes goes here!
+  foreach ($header_JS_inc as $script) { ?>
+    <script type="text/javascript" src="<?php echo $script?>"></script>
+<?php } ?>
   </head>
   <body id="<?php echo $body_ID ?>">
     <header>
-      <?php if($header_nav_display) { ?><nav class="font-signika">
+<?php if($header_nav_display) { ?>      <nav class="font-signika">
         <!--Nav part of desktops-->
         <ul id="desktop-nav">
           <!--Main links-->
@@ -44,5 +50,5 @@
           <div id="mobile-nav-close" class="font-awesome">&#xf00d;</div>
           <!--Leave this blank, it will be filled up later on by jQuery.-->
         </ul>
-      </nav>
-    <?php } ?></header>
+      </nav><?php } ?>
+    </header>

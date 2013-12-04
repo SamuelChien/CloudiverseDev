@@ -73,14 +73,6 @@
       </section>
     </footer>
     <section id="body-scripts">
-      <script type='text/javascript' src="<?php echo base_url('asset/js/foundation.min.js');?>"></script>
-      <script type='text/javascript' src="<?php echo base_url('asset/js/header.js');?>"></script>
-      <script> $(document).foundation(); </script>
-<?php
-  // Custom JS includes goes here!
-  foreach ($header_JS_inc as $script) { ?>
-      <script type="text/javascript" src="<?php echo $script?>"></script>
-<?php } ?>
     </section>
   </body>
 </html>

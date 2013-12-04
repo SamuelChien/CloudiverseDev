@@ -120,11 +120,11 @@ li, ul{
 
 
 
-.padding{padding: $global-padding;}
-.padding-left{padding-left: $global-padding;}
-.padding-right{padding-right: $global-padding;}
-.padding-bottom{padding-bottom: $global-padding;}
-.padding-top{padding-top: $global-padding;}
+.padding{padding: $global-padding !important;}
+.padding-left{padding-left: $global-padding !important;}
+.padding-right{padding-right: $global-padding !important;}
+.padding-bottom{padding-bottom: $global-padding !important;}
+.padding-top{padding-top: $global-padding !important;}
 
 .no-padding{padding: 0 !important;}
 .no-padding-left{padding-left: 0 !important;}
