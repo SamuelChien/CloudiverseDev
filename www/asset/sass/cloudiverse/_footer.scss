@@ -1,10 +1,84 @@
 footer{
   /*position: absolute;*/
   /*bottom: 0px;*/
-  color: #FFF;
+  line-height: 30px;
+  @media #{$small} {
+    line-height: normal;
+  }
+  color: rgba(255,255,255,0.9);
+  
+  .bordered{
+    @extend .border-bottom;
+    @media #{$small} {
+      border-bottom: none;
+       border-right: 1px solid $global-border-colour;
+    }
+  }
+  
+  #footer-top{
+    background: #084b78;
+    
+    #site-index{
+      li{
+        float: left;
+        padding-left: 7px;
+        &:not(:last-child):after{
+          content:"\b7";
+          padding-left: 7px;
+        }
+      }
+      @include clearfix();
+    }
+  }
+  #footer-middle{
+    background: #074168;
+    padding: 30px;
+    color: #FFF;
+  }
+  #footer-bottom{
+    background: #333;
+    color: #666;
+    
+    .container{
+      #footer-legalinfo{
+        display: inline-block;
+        text-align: center;
+        @media #{$small} {
+          text-align: left;
+        }
+      }
+      #footer-social{
+        display: inline-block;
+        text-align: center;
+        line-height: normal;
+        @media #{$small} {
+          text-align: right;
+        }
+        
+        color: #333;
+        div{
+          background: #666;
+          margin: 0 7px;
+          padding: 15px;
+          width: 45px;
+          height: 45px;
+          text-align: center;
+          display: inline-block;
+          -webkit-border-radius: 40px;
+          -moz-border-radius: 40px;
+          border-radius: 40px;
+          @include single-transition(background);
+          
+          &:hover{
+            background: #555;
+          }
+        }
+      }
+    }
+  }
   #legal, #version{
     opacity: 0.4;
       font-size: 12px;
-      padding: 0 20px;
+      padding: 5px 0;
     }
 }

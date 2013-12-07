@@ -1,0 +1,18 @@
+$inactive-bar-img: url(../img/progressbar/inactive.png);
+$active-bar-img: url(../img/progressbar/active.png);;
+
+.progress-bar{
+  width: 100%;
+  height: 20px;
+  border: 4px solid #202020;
+  background: $inactive-bar-img;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  
+  .status{
+    width: 0;
+    height: 100%;
+    background: $active-bar-img;
+  }
+}

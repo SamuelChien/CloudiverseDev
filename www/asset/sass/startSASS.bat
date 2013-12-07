@@ -1,2 +1,2 @@
-sass --watch foundation.scss:..\css\foundation.css style.scss:..\css\style.css
+sass --watch style.scss:..\css\style.css
 pause
