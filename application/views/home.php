@@ -49,63 +49,22 @@
           </div>
         </div>
         <div class="seperator dark no-margin"></div>
-        <div class="row padding-top">
-          <div class="medium-4 columns">
-            <div class="progress-bar" id="progress-bar-1"><div class="status"></div></div>
-          </div>
-          <div class="medium-4 columns">
-            <div class="progress-bar" id="progress-bar-2"><div class="status"></div></div>
-          </div>
-          <div class="medium-4 columns">
-            <div class="progress-bar" id="progress-bar-3"><div class="status"></div></div>
-          </div>
-          <script>
-            //A tempoarary script that animates the prgress bar above.
-            var bar1 = $("#progress-bar-1");
-            var bar2 = $("#progress-bar-2");
-            var bar3 = $("#progress-bar-3");
-            setProgressBar(1, bar1, function(){
-              setProgressBar(1, bar2, function(){
-                setProgressBar(1, bar3);
-              });
-            });
-          </script>
-        </div>
       </div>
-    </section>
-    <!-- At the bottom of your page but inside of the body tag -->
-    <ol class="joyride-list" data-joyride>
-      <li data-button="Sure">
-        <h4>Welcome to Cloudiverse</h4>
-        <p>Since this is your first time using the service, would you like to have a tour of the site?</p>
-      </li>
-      <li data-id="desktop-nav" data-text="Next">
-        <h4>The Navigational Bar</h4>
-        <p>You can control all the details for you tour stop. Any valid HTML will work inside of Joyride.</p>
-      </li>
-      <li data-id="joyride-stop-settings" data-button="Next" data-options="tip_animation:fade">
-        <h4>Stop #2</h4>
-        <p>You can change all your settings, including managing cloud storages over here!</p>
-      </li>
-      <li data-id="file-list" data-text="Next">
-        <h4>File lists</h4>
-        <p>All your file are shown here sdfhpj</p>
-      </li>
-      <li data-id="file-controls" data-text="Next">
-        <h4>File manager</h4>
-        <p>You can do stuff fdgldfsg here.</p>
-      </li>
-      <li data-button="Ok got it!">
-        <h4>You're good to go!</h4>
-        <p>If you have anymore questions visit our FAQs or our docs  blah blah blah</p>
-      </li>
-    </ol>
-    <script>
-      $(document).ready(function(){
-        //$(this).foundation('joyride', 'start');
-      });
-    </script>
 <?php
+  /*
+   * This includes adds the site's tutorial. To enable the site's tutorial, you must add a get varaible
+   * showtutorial in the url and set it to true.
+   * e.g. url: "http://cloudiverse.com/?showtutorial=true" will display the tutorial.
+   */
+  if($this->input->get('showtutorial') == 'true')
+    $this->load->view('tutorial');
+?>
+    </section>
+<?php
+  /*
+   * We want to include the Javascript files once the entire page has been loaded,
+   * So JS includes go into the footer.
+   */
   $data['header_JS_inc'] = $header_JS_inc;
   $this->load->view('i/footer', $data);
 ?>
